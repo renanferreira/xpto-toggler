@@ -1,5 +1,11 @@
 package com.xpto.toggler.model;
 
-public class Toggle {
+import java.util.List;
 
+public class Toggle {
+	private String toogleName;
+	private boolean	toogleValue;
+	private int priority;
+	private boolean override;
+	private List<String> allowedServices;
 }
