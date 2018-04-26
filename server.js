@@ -13,7 +13,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/xpto');
 
 /**
- * Server Setup
+ * Server setup
  */
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
@@ -26,5 +26,8 @@ var userRoute = require('./api/routes/user-route');
 toggleRoute(server);
 userRoute(server);
 
+/**
+ * Start server
+ */
 server.listen(port);
 console.log('Message RESTful API server started on: ' + port);
