@@ -1,13 +1,11 @@
 package com.xpto.toggler.model;
 
-import java.util.List;
-
 public class Toggle {
 	private String toogleName;
 	private boolean	toogleValue;
 	private int priority;
-	private List<Service> serviceListOn;
-	private List<Service> serviceListOff;
+	private Service serviceListOn;
+	private Service serviceListOff;
 	
 	public String getToogleName() {
 		return toogleName;
@@ -27,16 +25,16 @@ public class Toggle {
 	public void setPriority(int priority) {
 		this.priority = priority;
 	}
-	public List<Service> getServiceListOn() {
+	public Service getServiceListOn() {
 		return serviceListOn;
 	}
-	public void setServiceListOn(List<Service> serviceListOn) {
+	public void setServiceListOn(Service serviceListOn) {
 		this.serviceListOn = serviceListOn;
 	}
-	public List<Service> getServiceListOff() {
+	public Service getServiceListOff() {
 		return serviceListOff;
 	}
-	public void setServiceListOff(List<Service> serviceListOff) {
+	public void setServiceListOff(Service serviceListOff) {
 		this.serviceListOff = serviceListOff;
 	}
 }
