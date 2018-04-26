@@ -1,0 +1,19 @@
+{
+  "name": "xpto-toggler",
+  "version": "1.0.0",
+  "description": "XPTO Toggler API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renanferreira/xpto-toggler.git"
+  },
+  "author": "Renan Ferreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renanferreira/xpto-toggler/issues"
+  },
+  "homepage": "https://github.com/renanferreira/xpto-toggler#readme"
+}
