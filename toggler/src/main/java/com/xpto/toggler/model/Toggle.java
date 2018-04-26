@@ -6,9 +6,8 @@ public class Toggle {
 	private String toogleName;
 	private boolean	toogleValue;
 	private int priority;
-	private boolean override;
-	private List<String> allowedServices;
-	private String username;
+	private List<Service> serviceListOn;
+	private List<Service> serviceListOff;
 	
 	public String getToogleName() {
 		return toogleName;
@@ -28,22 +27,16 @@ public class Toggle {
 	public void setPriority(int priority) {
 		this.priority = priority;
 	}
-	public boolean isOverride() {
-		return override;
+	public List<Service> getServiceListOn() {
+		return serviceListOn;
 	}
-	public void setOverride(boolean override) {
-		this.override = override;
+	public void setServiceListOn(List<Service> serviceListOn) {
+		this.serviceListOn = serviceListOn;
 	}
-	public List<String> getAllowedServices() {
-		return allowedServices;
+	public List<Service> getServiceListOff() {
+		return serviceListOff;
 	}
-	public void setAllowedServices(List<String> allowedServices) {
-		this.allowedServices = allowedServices;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setServiceListOff(List<Service> serviceListOff) {
+		this.serviceListOff = serviceListOff;
 	}
 }
