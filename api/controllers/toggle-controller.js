@@ -56,8 +56,8 @@ exports.searchToggles = (req, res) => {
 
                 response = {
                     toggleName: data[0].toggleName,
-                    servicesListOn: data[0].serviceListOn,
-                    servicesListOff: data[0].serviceListOff
+                    serviceListOn: data[0].serviceListOn,
+                    serviceListOff: data[0].serviceListOff
                 }
 
                 res.json(response);
