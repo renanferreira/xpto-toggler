@@ -3,7 +3,10 @@
 module.exports = (app) => {
     var userController = require('../controllers/user-controller');
 
-    app.route('/users/authenticate')
+    app.route('/toggler/users')
+        .get(userController.listUsers);
+
+    app.route('/toggler/users/authenticate')
         .post(userController.authenticate);
 
 }

@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 
 const port = 3000;
 var server = express();
+require('./api/models/toggle-model');
+require('./api/models/user-model');
 
 /**
  * Database connection
@@ -25,6 +27,10 @@ var toggleRoute = require('./api/routes/toggle-route');
 var userRoute = require('./api/routes/user-route');
 toggleRoute(server);
 userRoute(server);
+
+server.use(function (req, res) {
+    res.status(404).send('{ error: Resource not found }');
+});
 
 /**
  * Start server
