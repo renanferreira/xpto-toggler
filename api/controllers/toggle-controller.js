@@ -28,7 +28,7 @@ exports.searchToggles = (req, res) => {
         }, function (err, data) {
             if (err) res.send(err);
 
-            res.json({ data });
+            res.json(data);
         });
 };
 exports.addToggle = (req, res) => { };
