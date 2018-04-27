@@ -7,7 +7,8 @@ module.exports = (app) => {
         .get(toggleController.listToggles)
         .post(toggleController.searchToggles);
 
-    app.route('/toggler/toggles/new')
-        .post(toggleController.addToggle);
+    app.route('/toggler/toggles')
+        .post(toggleController.addToggle)
+        .put(toggleController.updateToggle);
 
 }
