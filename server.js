@@ -29,12 +29,12 @@ toggleRoute(server);
 userRoute(server);
 
 server.use(function (req, res) {
-    let response404 = {
+    let error404 = {
         error: "Resource not found"
     };
 
     res.type('application/json');    
-    res.status(404).send(response404);
+    res.status(404).send(error404);
 });
 
 /**
