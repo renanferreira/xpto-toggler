@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5ae29113040e4024b4c0fe51"},"toggleName":"isButtonBlue","toggleVersion":{"$numberInt":"1"},"serviceListOn":{"service":["DEF","GHI","JKL","MNO","PQR"],"override":false},"serviceListOff":{"service":["ABC"],"override":true}}
+{"_id":{"$oid":"5ae30cc0797f0c52b84cdee4"},"toggleName":"isButtonBlue","toggleVersion":{"$numberInt":"2"},"serviceListOn":{"service":["DEF","GHI","JKL","MNO","PQR","RRR"],"override":false},"serviceListOff":{"service":["ABC"],"override":true}}
+{"_id":{"$oid":"5ae4d55cb2ed565574dcc965"},"serviceListOn":{"service":["ABCD2","EFGHJI","LALALA","TROLOLO","ZZZZ","XXXX"],"override":false},"serviceListOff":{"service":["ABC"],"override":true},"toggleName":"isButtonBlue","toggleVersion":{"$numberInt":"3"}}

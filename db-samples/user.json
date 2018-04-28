@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5ae292de040e4024b4c0fe53"},"username":"user","token":"ahskfg7q8gfbqubf293ec7gbfc9298323r23f2uwchn","isAdmin":false}
+{"_id":{"$oid":"5ae29378040e4024b4c0fe54"},"username":"superuser","token":"8h3funej8h2f3unjwacasc32ir23fini2nc829dhnuc","isAdmin":true}
