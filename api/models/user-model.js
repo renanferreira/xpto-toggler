@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 var userSchema = new Schema({
     username: String,
     token: String,
-    role: String
+    isAdmin: Boolean
     },
     { versionKey: false });
 

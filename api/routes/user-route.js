@@ -6,7 +6,4 @@ module.exports = (app) => {
     app.route('/toggler/users')
         .get(userController.listUsers);
 
-    app.route('/toggler/users/authenticate')
-        .post(userController.authenticate);
-
 }

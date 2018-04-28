@@ -106,23 +106,33 @@ exports.addToggle = (req, res) => {
         return res.status(403).send(error403);
     }
 
-    toggle.create(req.body, (err, data) => {
-        let response = {};
-        if (err) {
-            console.log(JSON.stringify(err));
-            response = {
-                error: "Add Toggle Error"
+    userController.authenticate(authentication)
+        .then((result) => {
+            if (result) {
+                toggle.create(req.body, (err, data) => {
+                    let response = {};
+                    if (err) {
+                        console.log(JSON.stringify(err));
+                        response = {
+                            error: "Add Toggle Error"
+                        }
+                        return res.status(500).send(response);
+                    } else {
+                        console.log(JSON.stringify(data));
+                        response = {
+                            message: "Toggle Added"
+                        }
+                        return res.status(200).send(response);
+                    }
+                });
+            } else {
+                let response = {};
+                response = {
+                    error: "Not authorized"
+                }
+                return res.status(403).send(response);
             }
-            return res.status(500).send(response);
-        } else {
-            console.log(JSON.stringify(data));
-            response = {
-                message: "Toggle Added"
-            }
-            return res.status(200).send(response);
-        }
-    });
-
+        });
 };
 
 exports.updateToggle = (req, res) => {
@@ -143,33 +153,44 @@ exports.updateToggle = (req, res) => {
         return res.status(403).send(error403);
     }
 
-    toggle.findOneAndUpdate(
-        {
-            $and: [
-                { toggleName: req.body.toggleName },
-                { toggleVersion: req.body.toggleVersion }
-            ]
-        }, req.body, (err, data) => {
-            let response = {};
-            if (err) {
-                console.log(JSON.stringify(err));
-                response = {
-                    error: "Update Toggle Error"
-                }
-                return res.status(500).send(response);
+    userController.authenticate(authentication)
+        .then((result) => {
+            if (result) {
+                toggle.findOneAndUpdate(
+                    {
+                        $and: [
+                            { toggleName: req.body.toggleName },
+                            { toggleVersion: req.body.toggleVersion }
+                        ]
+                    }, req.body, (err, data) => {
+                        let response = {};
+                        if (err) {
+                            console.log(JSON.stringify(err));
+                            response = {
+                                error: "Update Toggle Error"
+                            }
+                            return res.status(500).send(response);
+                        } else {
+                            console.log(JSON.stringify(data));
+                            if (data === null) {
+                                response = {
+                                    message: "No data to update"
+                                }
+                                return res.status(200).send(response);
+                            } else {
+                                response = {
+                                    message: "Toggle Updated"
+                                }
+                                return res.status(200).send(response);
+                            }
+                        }
+                    });
             } else {
-                console.log(JSON.stringify(data));
-                if (data === null) {
-                    response = {
-                        message: "No data to update"
-                    }
-                    return res.status(200).send(response);
-                } else {
-                    response = {
-                        message: "Toggle Updated"
-                    }
-                    return res.status(200).send(response);
+                let response = {};
+                response = {
+                    error: "Not authorized"
                 }
+                return res.status(403).send(response);
             }
         });
 };
