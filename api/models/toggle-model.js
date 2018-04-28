@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 var toggleSchema = new Schema({
     toggleName: String,
-    priority: Number,
+    toggleVersion: Number,
     serviceListOn: {
         service: [String],
         override: Boolean
@@ -13,6 +13,6 @@ var toggleSchema = new Schema({
         service: [String],
         override: Boolean
     }
-});
+    },{ versionKey: false });
 
 module.exports = mongoose.model('Toggles', toggleSchema, 'toggle');
