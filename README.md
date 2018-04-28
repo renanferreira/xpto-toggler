@@ -18,7 +18,7 @@ Once the database instance is up and running, it is necessary to create a databa
 * toggle
 * user
 
-The suggestion is to use JSON sample files under /db-samples folder to preserve the document schema.
+It is required to import the JSON sample files under /db-samples folder to preserve the document schema.
 
 Is also necessary to create the indexes:
 
