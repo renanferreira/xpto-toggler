@@ -22,16 +22,16 @@ exports.listToggles = (req, res) => {
 
         if (data.length > 0) {
             let response = [];
-            console.log("Data " + JSON.stringify(data));
 
             data.forEach(item => {
                 let service = {
                     toggleName: item.toggleName,
+                    toggleVersion: item.toggleVersion,
                     serviceListOn: item.serviceListOn,
                     serviceListOff: item.serviceListOff
                 }
 
-                response.push(item);
+                response.push(service);
             });
 
             res.json(response);
@@ -68,8 +68,6 @@ exports.searchToggles = (req, res) => {
 
             let response = {};
             if (data.length > 0) {
-
-                console.log("Data " + JSON.stringify(data));
 
                 response = {
                     toggleName: data[0].toggleName,
@@ -112,13 +110,13 @@ exports.addToggle = (req, res) => {
                 toggle.create(req.body, (err, data) => {
                     let response = {};
                     if (err) {
-                        console.log(JSON.stringify(err));
+                        //console.log(JSON.stringify(err));
                         response = {
                             error: "Add Toggle Error"
                         }
                         return res.status(500).send(response);
                     } else {
-                        console.log(JSON.stringify(data));
+                        //console.log(JSON.stringify(data));
                         response = {
                             message: "Toggle Added"
                         }
@@ -165,13 +163,13 @@ exports.updateToggle = (req, res) => {
                     }, req.body, (err, data) => {
                         let response = {};
                         if (err) {
-                            console.log(JSON.stringify(err));
+                            //console.log(JSON.stringify(err));
                             response = {
                                 error: "Update Toggle Error"
                             }
                             return res.status(500).send(response);
                         } else {
-                            console.log(JSON.stringify(data));
+                            //console.log(JSON.stringify(data));
                             if (data === null) {
                                 response = {
                                     message: "No data to update"

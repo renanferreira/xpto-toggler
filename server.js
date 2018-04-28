@@ -21,12 +21,10 @@ server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
 
 /**
- * Register resources
+ * Resources setup
  */
 var toggleRoute = require('./api/routes/toggle-route');
-var userRoute = require('./api/routes/user-route');
 toggleRoute(server);
-userRoute(server);
 
 server.use(function (req, res) {
     let error404 = {
@@ -38,7 +36,7 @@ server.use(function (req, res) {
 });
 
 /**
- * Start server
+ * Server setup
  */
 server.listen(port);
 console.log('Message RESTful API server started on: ' + port);
