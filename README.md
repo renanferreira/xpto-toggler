@@ -20,7 +20,7 @@ Once the database instance is up and running, it is necessary to create a databa
 
 It is required to import the JSON sample files under /db-samples folder to preserve the document schema.
 
-Is also required to create the indexes:
+Is also required to create the unique indexes:
 
 toogle
 * A compound index with toggleName and toggleVersion elements
