@@ -33,7 +33,7 @@ user
 
 Step 1:
 
-Download dependencies with NPM on project's folder where is placed packege.json file:
+Download dependencies with NPM on project's folder where is placed package.json file:
 ```
 npm install
 ```
