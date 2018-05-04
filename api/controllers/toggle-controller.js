@@ -14,9 +14,6 @@ exports.listToggles = (req, res) => {
         return res.status(403).send(error403);
     }
 
-    /**
-     * TODO: exibição de retorno tratada
-     */
     toggle.find(function (err, data) {
         if (err) res.send(err);
 
